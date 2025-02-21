@@ -2,3 +2,7 @@
 name = "functions"
 version = "0.1.0"
 edition = "2021"
+
+[dependencies]
+euclid-divmod = { git = "https://github.com/BartMassey/euclid-divmod" }
+

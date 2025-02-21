@@ -1,6 +1,8 @@
+use euclid_divmod::*;
+
 fn main() {
     let a = 2147483647;
-    let b = 1234567891;
+    let b = -1234567891;
 
     println!("gcd({}, {}): {}", a, b, gcd(a, b));
 
@@ -23,10 +25,12 @@ fn main() {
 /// where a = bq + r therefore r = a - bq 
 /// q is quotient
 /// r is remainder
-fn gcd(mut a: i32, mut b: i32) -> i32 {
+fn gcd(mut a: i64, mut b: i64) -> i64 {
 
     while b != 0 {
-        let q = a / b;
+
+        let q = euclid_divmod::div(a, b);
+        //let q = a / b;
         let r = a - (b * q);
         
         //next iteration
@@ -39,7 +43,7 @@ fn gcd(mut a: i32, mut b: i32) -> i32 {
 /// Extended euclidean algorithm which computes gcd(a,b) as well as the coefficents of bezouts identity
 /// of the form: a*s + b*t = gcd(a,b)
 /// Returns -> (gcd(a,b): i32, s: i32, t:i32)
-fn extended_gcd(mut a: i32, mut b: i32) -> (i32, i32, i32) {
+fn extended_gcd(mut a: i64, mut b: i64) -> (i64, i64, i64) {
 
     let mut s1 = 1;
     let mut s2 = 0;
@@ -47,7 +51,7 @@ fn extended_gcd(mut a: i32, mut b: i32) -> (i32, i32, i32) {
     let mut t2 = 1;
 
     while b != 0 {
-        let q = a / b;
+        let q = euclid_divmod::div(a, b);
         let r = a - q * b;
 
         let s3 = s1 - q * s2;

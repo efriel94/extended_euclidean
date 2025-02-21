@@ -3,5 +3,13 @@
 version = 4
 
 [[package]]
+name = "euclid-divmod"
+version = "0.1.0"
+source = "git+https://github.com/BartMassey/euclid-divmod#ee15f3b525ecd3471771de04c5bc5520568c440b"
+
+[[package]]
 name = "functions"
 version = "0.1.0"
+dependencies = [
+ "euclid-divmod",
+]
