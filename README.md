@@ -22,3 +22,7 @@ where x is the modular multplicative inverse of a mod b and y is the modular mul
 Used this crate for handling euclid div and remainders: https://github.com/BartMassey/euclid-divmod/blob/master/src/lib.rs  
 
 Paper on euclidean definitions of div and remainder implementation is worth a read: https://dl.acm.org/doi/pdf/10.1145/128861.128862  
+
+## ToDo 
+
+Implement polynominal gcd flavors : https://en.wikipedia.org/wiki/Polynomial_greatest_common_divisor#Univariate_polynomials_with_coefficients_in_a_field
